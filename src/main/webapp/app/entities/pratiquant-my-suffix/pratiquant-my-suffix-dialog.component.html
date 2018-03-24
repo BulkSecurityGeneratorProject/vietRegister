@@ -1,0 +1,80 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myPratiquantLabel">Create or edit a Pratiquant</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!pratiquant.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="pratiquant.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_nom">Nom</label>
+            <input type="text" class="form-control" name="nom" id="field_nom"
+                [(ngModel)]="pratiquant.nom" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_prenom">Prenom</label>
+            <input type="text" class="form-control" name="prenom" id="field_prenom"
+                [(ngModel)]="pratiquant.prenom" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_dateNaissance">Date Naissance</label>
+            <div class="d-flex">
+                <input id="field_dateNaissance" type="datetime-local" class="form-control" name="dateNaissance" [(ngModel)]="pratiquant.dateNaissance"
+                />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_email">Email</label>
+            <input type="text" class="form-control" name="email" id="field_email"
+                [(ngModel)]="pratiquant.email" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_telephone">Telephone</label>
+            <input type="text" class="form-control" name="telephone" id="field_telephone"
+                [(ngModel)]="pratiquant.telephone" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_grade">Grade</label>
+            <select class="form-control" name="grade" [(ngModel)]="pratiquant.grade" id="field_grade" >
+                <option value="CAP0">CAP0</option>
+                <option value="CAP1">CAP1</option>
+                <option value="CAP2">CAP2</option>
+                <option value="CAP3">CAP3</option>
+                <option value="CAP4">CAP4</option>
+                <option value="NOIR">NOIR</option>
+                <option value="DAN1">DAN1</option>
+                <option value="DAN2">DAN2</option>
+                <option value="DAN3">DAN3</option>
+                <option value="DAN4">DAN4</option>
+                <option value="DAN5">DAN5</option>
+                <option value="DAN6">DAN6</option>
+                <option value="DAN7">DAN7</option>
+                <option value="DAN8">DAN8</option>
+                <option value="DAN9">DAN9</option>
+                <option value="DAN10">DAN10</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" for="field_salle">Salle</label>
+            <select class="form-control" id="field_salle" name="salle" [(ngModel)]="pratiquant.salleId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="salleOption.id" *ngFor="let salleOption of salles; trackBy: trackSalleById">{{salleOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

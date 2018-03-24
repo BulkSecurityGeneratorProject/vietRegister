@@ -1,0 +1,52 @@
+
+<div *ngIf="pratiquant">
+    <h2><span>Pratiquant</span> {{pratiquant.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>Nom</span></dt>
+        <dd>
+            <span>{{pratiquant.nom}}</span>
+        </dd>
+        <dt><span>Prenom</span></dt>
+        <dd>
+            <span>{{pratiquant.prenom}}</span>
+        </dd>
+        <dt><span>Date Naissance</span></dt>
+        <dd>
+            <span>{{pratiquant.dateNaissance | date:'medium'}}</span>
+        </dd>
+        <dt><span>Email</span></dt>
+        <dd>
+            <span>{{pratiquant.email}}</span>
+        </dd>
+        <dt><span>Telephone</span></dt>
+        <dd>
+            <span>{{pratiquant.telephone}}</span>
+        </dd>
+        <dt><span>Grade</span></dt>
+        <dd>
+            <span>{{pratiquant.grade}}</span>
+        </dd>
+        <dt><span>Salle</span></dt>
+        <dd>
+            <div *ngIf="pratiquant.salleId">
+                <a [routerLink]="['/salle-my-suffix', pratiquant.salleId]">{{pratiquant.salleId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'pratiquant-my-suffix/'+ pratiquant.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>
