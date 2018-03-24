@@ -1,0 +1,45 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "salle",
+            "otherEntityName": "salle",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "nom",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prenom",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dateNaissance",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telephone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "grade",
+            "fieldType": "Grade",
+            "fieldValues": "CAP0,CAP1,CAP2,CAP3,CAP4,NOIR,DAN1,DAN2,DAN3,DAN4,DAN5,DAN6,DAN7,DAN8,DAN9,DAN10"
+        }
+    ],
+    "changelogDate": "20180324221344",
+    "entityTableName": "pratiquant",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mySuffix"
+}

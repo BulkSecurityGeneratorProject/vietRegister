@@ -42,6 +42,23 @@ public class CacheConfiguration {
             cm.createCache(ma.kayass.viet.register.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(ma.kayass.viet.register.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(ma.kayass.viet.register.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(ma.kayass.viet.register.domain.Ville.class.getName(), jcacheConfiguration);
+            cm.createCache(ma.kayass.viet.register.domain.Ville.class.getName() + ".salles", jcacheConfiguration);
+            cm.createCache(ma.kayass.viet.register.domain.Salle.class.getName(), jcacheConfiguration);
+            cm.createCache(ma.kayass.viet.register.domain.Salle.class.getName() + ".pratiquants", jcacheConfiguration);
+            cm.createCache(ma.kayass.viet.register.domain.Pratiquant.class.getName(), jcacheConfiguration);
+            cm.createCache(ma.kayass.viet.register.domain.Region.class.getName(), jcacheConfiguration);
+            cm.createCache(ma.kayass.viet.register.domain.Country.class.getName(), jcacheConfiguration);
+            cm.createCache(ma.kayass.viet.register.domain.Location.class.getName(), jcacheConfiguration);
+            cm.createCache(ma.kayass.viet.register.domain.Department.class.getName(), jcacheConfiguration);
+            cm.createCache(ma.kayass.viet.register.domain.Department.class.getName() + ".employees", jcacheConfiguration);
+            cm.createCache(ma.kayass.viet.register.domain.Task.class.getName(), jcacheConfiguration);
+            cm.createCache(ma.kayass.viet.register.domain.Task.class.getName() + ".jobs", jcacheConfiguration);
+            cm.createCache(ma.kayass.viet.register.domain.Employee.class.getName(), jcacheConfiguration);
+            cm.createCache(ma.kayass.viet.register.domain.Employee.class.getName() + ".jobs", jcacheConfiguration);
+            cm.createCache(ma.kayass.viet.register.domain.Job.class.getName(), jcacheConfiguration);
+            cm.createCache(ma.kayass.viet.register.domain.Job.class.getName() + ".tasks", jcacheConfiguration);
+            cm.createCache(ma.kayass.viet.register.domain.JobHistory.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }
