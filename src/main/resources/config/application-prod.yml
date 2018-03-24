@@ -36,9 +36,9 @@ spring:
                     destination: topic-jhipster
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:mysql://localhost:3306/vietRegister?useUnicode=true&characterEncoding=utf8&useSSL=false
-        username: root
-        password:
+        url: jdbc:mysql://88.198.122.33:3306/vietRegister?useUnicode=true&characterEncoding=utf8&useSSL=false
+        username: essentiel
+        password: essentiel@321
         hikari:
             data-source-properties:
                 cachePrepStmts: true
